@@ -1,0 +1,32 @@
+class RegistroClima:
+    def __init__(self):
+        self.temperaturas_diarias = []
+
+    def ingresar_temperatura(self, temperatura):
+        self.temperaturas_diarias.append(temperatura)
+
+    def calcular_promedio_semanal(self):
+        if len(self.temperaturas_diarias) == 0:
+            return 0
+        suma_temperaturas = sum(self.temperaturas_diarias)
+        promedio = suma_temperaturas / len(self.temperaturas_diarias)
+        return promedio
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    registro = RegistroClima()
+
+    # Ingresar temperaturas diarias
+    for dia in range(1, 8):
+        temperatura = float(input(f"Ingrese la temperatura del día {dia}: "))
+        registro.ingresar_temperatura(temperatura)
+
+    # Calcular promedio semanal
+    promedio_semanal = registro.calcular_promedio_semanal()
+    print(f"El promedio semanal de temperaturas es: {promedio_semanal:.f}°C")
+
+
+# La clase RegistroClima representa la información diaria del clima
+# El método ingresar_temperatura() permite agregar temperaturas diarias al registro.
+# El método calcular_promedio_semanal() calcula el promedio de las temperaturas ingresadas.
+# Se aplican conceptos como encapsulamiento (al ocultar la lista de temperaturas dentro de la clase) y métodos de instancia para interactuar con los datos.
