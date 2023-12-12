@@ -1,0 +1,28 @@
+# Función para ingresar las temperaturas diarias
+def ingresar_temperaturas_diarias():
+    temperaturas = []
+    for dia in range(1, 8):
+        temperatura = float(input(f"Ingrese la temperatura del día {dia}: "))
+        temperaturas.append(temperatura)
+    return temperaturas
+
+# Función para calcular el promedio semanal
+def calcular_promedio_semanal(temperaturas):
+    suma_temperaturas = sum(temperaturas)
+    promedio = suma_temperaturas / len(temperaturas)
+    return promedio
+
+# Función principal
+def main():
+    print("Bienvenido al calculador de promedio semanal de temperaturas.")
+    temperaturas_diarias = ingresar_temperaturas_diarias()
+    promedio_semanal = calcular_promedio_semanal(temperaturas_diarias)
+    print(f"El promedio semanal de temperaturas es: {promedio_semanal:.2f}°C")
+
+if __name__ == "__main__":
+    main()
+
+
+# La función ingresar_temperaturas_diarias() solicita al usuario ingresar las temperaturas diarias durante una semana y las almacena en una lista.
+# La función calcular_promedio_semanal(temperaturas) calcula el promedio de las temperaturas ingresadas.
+# La función main() orquesta todo el proceso y muestra el resultado final.
